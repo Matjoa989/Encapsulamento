@@ -1,0 +1,50 @@
+﻿namespace Heranca
+{
+    class Animal
+    {
+        public string Nome;
+
+        public void Comer()
+        {
+            System.Console.WriteLine("O ANIMAL ESTÁ COMENDO.");
+        }
+    }
+
+    class Cachorro : Animal
+    {
+        public void Latir()
+        {
+            System.Console.WriteLine("AU AU!");
+        }
+    }
+
+    class Gato : Animal
+    {
+        public void Miar()
+        {
+            System.Console.WriteLine("MIAU!");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Cachorro cachorro = new Cachorro();
+            cachorro.Nome = "Rex";
+
+            Gato gato = new Gato();
+            gato.Nome = "Mingau";
+
+            System.Console.WriteLine(cachorro.Nome);
+            cachorro.Comer();
+            cachorro.Latir();
+
+            System.Console.WriteLine();
+
+            System.Console.WriteLine(gato.Nome);
+            gato.Comer();
+            gato.Miar();
+        }
+    }
+}

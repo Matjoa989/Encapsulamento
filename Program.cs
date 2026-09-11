@@ -1,51 +1,18 @@
-﻿namespace Heranca
+﻿namespace Encapsulamento
 {
-    class Funcionario
-    {
-        public string Nome;
-        public double Salario;
-
-        public virtual double CalcularBonusAnual()
-        {
-            return Salario * 0.10;
-        }
-    }
-
-    class Gerente : Funcionario
-    {
-        public override double CalcularBonusAnual()
-        {
-            return (Salario * 0.15) + 1000;
-        }
-    }
-
-    class Desenvolvedor : Funcionario
-    {
-        public override double CalcularBonusAnual()
-        {
-            return Salario * 0.12;
-        }
-    }
-
     internal class Program
     {
         static void Main(string[] args)
         {
-            Gerente gerente = new Gerente();
-            gerente.Nome = "Carlos";
-            gerente.Salario = 5000;
+            Produto produto = new Produto();
 
-            Desenvolvedor desenvolvedor = new Desenvolvedor();
-            desenvolvedor.Nome = "João";
-            desenvolvedor.Salario = 4000;
+            //valor positivo
+            produto.Preco = 150.50;
+            Console.WriteLine($"Preço positivo atribuído: {produto.Preco}");
 
-            System.Console.WriteLine("Gerente: " + gerente.Nome);
-            System.Console.WriteLine("Bônus anual: R$ " + gerente.CalcularBonusAnual());
-
-            System.Console.WriteLine();
-
-            System.Console.WriteLine("Desenvolvedor: " + desenvolvedor.Nome);
-            System.Console.WriteLine("Bônus anual: R$ " + desenvolvedor.CalcularBonusAnual());
+            //valor negativo
+            produto.Preco = -45.00;
+            Console.WriteLine($"Preço negativo atribuído: {produto.Preco}");
         }
     }
 }

@@ -1,50 +1,56 @@
-﻿namespace Heranca
+﻿﻿Produto.cs:
+---------------------------------------------------------
+
+namespace Encapsulamento
 {
-    class Animal
+    internal class Produto
     {
-        public string Nome;
+        private double _preco;
 
-        public void Comer()
+        public int MyProperty { get; set; }
+
+        public double Preco
         {
-            System.Console.WriteLine("O ANIMAL ESTÁ COMENDO.");
+            get { return _preco; }
+            set
+            {
+                if (value < 0)
+                {
+                    Console.WriteLine("O preço é 0");
+                }
+                else
+                {
+                    _preco = value;
+                }
+            }
         }
     }
+}
+-----------------------------------------------------------------
+program.cs:
 
-    class Cachorro : Animal
+namespace Encapsulamento
+{
+    internal class Produto
     {
-        public void Latir()
+        private double _preco;
+
+        public int MyProperty { get; set; }
+
+        public double Preco
         {
-            System.Console.WriteLine("AU AU!");
-        }
-    }
-
-    class Gato : Animal
-    {
-        public void Miar()
-        {
-            System.Console.WriteLine("MIAU!");
-        }
-    }
-
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Cachorro cachorro = new Cachorro();
-            cachorro.Nome = "Rex";
-
-            Gato gato = new Gato();
-            gato.Nome = "Mingau";
-
-            System.Console.WriteLine(cachorro.Nome);
-            cachorro.Comer();
-            cachorro.Latir();
-
-            System.Console.WriteLine();
-
-            System.Console.WriteLine(gato.Nome);
-            gato.Comer();
-            gato.Miar();
+            get { return _preco; }
+            set
+            {
+                if (value < 0)
+                {
+                    Console.WriteLine("O preço é 0");
+                }
+                else
+                {
+                    _preco = value;
+                }
+            }
         }
     }
 }
